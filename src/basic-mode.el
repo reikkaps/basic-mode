@@ -1221,6 +1221,36 @@ Derived from `basic-mode'."
 
 ;; ----------------------------------------------------------------------------
 
+;; added by r31k <r31k@k4p5.de> 2023
+;; BBC Basic vlg
+;;
+(define-derived-mode bbcbasic-mode basic-mode "BBC Basic"
+  "Programming mode for BBC Basic.
+Derived from `basic-mode'."
+
+  (setq basic-functions
+        '("ABS" "ACS" "ASN" "ATN" "COS" "CHR$" "DEG" "EXP"
+          "INT" "LN" "LOG" "NOT" "RAD" "RND" "SGN"
+          "SIN" "SQR" "TAN"))
+
+  (setq basic-builtins '("AUTO" "BGET" "BPUT" "CALL" "CHAIN" "CLEAR"
+			 "clg" "cls" "close" "color" "colour" "count"
+                         "data" "delete" "edit" "load" "div" "new" "pause"
+                         "plot" "poke" "print" "rand" "run" "save"
+                         "scroll" "slow" "unplot"))
+
+  (setq basic-keywords '("DIM" "DEF" "DEFB" "DEFW" "DEFM" "FOR" "GOSUB" "GOTO" "IF" "NEXT" "RETURN"
+                         "STEP" "STOP" "TO"))
+
+  (setq basic-types nil)
+
+  (setq basic-increase-indent-keywords-bol '("for"))
+  (setq basic-increase-indent-keywords-eol nil)
+  (setq basic-decrease-indent-keywords-bol '("next"))
+
+  (basic-mode-initialize))
+
+
 (provide 'basic-mode)
 
 ;;; basic-mode.el ends here
